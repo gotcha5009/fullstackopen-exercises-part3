@@ -53,6 +53,7 @@ app.use(
     ].join(' ');
   })
 );
+app.use(express.static('build'));
 
 app
   .route('/api/persons')
