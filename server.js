@@ -99,7 +99,7 @@ app
   });
 
 app.get('/info', (req, res, next) => {
-  const count = Person.countDocuments({})
+  Person.countDocuments({})
     .then((num) => {
       res.send(`<div>
     <p>Phonebook has info for ${num} people</p>
@@ -127,7 +127,7 @@ const errorHandler = (err, req, res, next) => {
     return res.status(400).json({ error: err.message });
   }
 
-  next(error);
+  next(err);
 };
 
 // this has to be the last loaded middleware.
